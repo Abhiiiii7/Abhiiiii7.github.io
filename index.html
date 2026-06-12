@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+
+    <!-- Fonts: Playfair Display (italic serif), Barlow (condensed body), Space Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Barlow:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <!-- Page transition overlay -->
+    <div class="transition" aria-hidden="true">
+      <div class="transition-overlay overlay-1"></div>
+      <div class="transition-overlay overlay-2"></div>
+      <div class="transition-overlay overlay-3"></div>
+    </div>
+
+    <!-- Loading state (visible until JS loads data) -->
+    <div class="loading-screen" id="loadingScreen">
+      <div class="loading-spinner"></div>
+    </div>
+
+    <div class="page home-page">
+      <!-- Navigation -->
+      <nav>
+        <div class="logo">
+          <a href="#hero" class="logo-text mn" id="navLogo">PORTFOLIO</a>
+        </div>
+        <div class="nav-links" id="navLinks"></div>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+        </button>
+      </nav>
+
+      <!-- Mobile menu overlay -->
+      <div class="nav-overlay" id="navOverlay">
+        <div class="nav-overlay-items" id="navOverlayItems"></div>
+      </div>
+
+      <!-- Hero Section -->
+      <section class="hero" id="hero">
+        <div class="hero-content">
+          <p class="hero-greeting mn" id="heroGreeting"></p>
+          <div class="hero-name-wrapper">
+            <h1 class="hero-name-line hero-name-1" id="heroName1"></h1>
+            <h1 class="hero-name-line hero-name-2" id="heroName2"></h1>
+          </div>
+          <p class="hero-title" id="heroTitle"></p>
+        </div>
+        <div class="hero-footer">
+          <div class="hero-footer-left">
+            <p class="mn" id="heroTagline"></p>
+          </div>
+          <div class="hero-footer-center">
+            <div class="scroll-indicator">
+              <span class="scroll-line"></span>
+              <span class="mn">Scroll</span>
+            </div>
+          </div>
+          <div class="hero-footer-right">
+            <div class="hero-social-links" id="heroSocialLinks"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section class="about" id="about">
+        <div class="section-label mn">
+          <span id="aboutLabel">About</span>
+        </div>
+        <div class="about-content">
+          <div class="about-text">
+            <h2 class="about-heading" id="aboutHeading"></h2>
+            <div class="about-bio" id="aboutBio"></div>
+            <p class="about-philosophy mn" id="aboutPhilosophy"></p>
+          </div>
+          <div class="about-highlights" id="aboutHighlights"></div>
+        </div>
+      </section>
+
+      <!-- Experience Section -->
+      <section class="experience" id="experience">
+        <div class="section-label mn">
+          <span id="experienceLabel">Experience</span>
+        </div>
+        <div class="experience-list" id="experienceList"></div>
+      </section>
+
+      <!-- Skills Section -->
+      <section class="skills" id="skills">
+        <div class="section-label mn">
+          <span id="skillsLabel">Skills</span>
+        </div>
+        <div class="skills-header">
+          <h2 id="skillsHeading"></h2>
+        </div>
+        <div class="skills-grid" id="skillsGrid"></div>
+      </section>
+
+      <!-- Projects Section -->
+      <section class="projects" id="projects">
+        <div class="section-label mn">
+          <span id="projectsLabel">Projects</span>
+        </div>
+        <h2 class="projects-heading" id="projectsHeading"></h2>
+        <div class="projects-list" id="projectsList"></div>
+      </section>
+
+      <!-- Education Section -->
+      <section class="education" id="education">
+        <div class="section-label mn">
+          <span id="educationLabel">Education</span>
+        </div>
+        <h2 class="education-heading" id="educationHeading"></h2>
+        <div class="education-list" id="educationList"></div>
+      </section>
+
+      <!-- Contact Section -->
+      <section class="contact" id="contact">
+        <div class="contact-content">
+          <div class="section-label mn">
+            <span id="contactLabel">Contact</span>
+          </div>
+          <h2 class="contact-heading" id="contactHeading"></h2>
+          <p class="contact-subheading" id="contactSubheading"></p>
+          <div class="contact-details" id="contactDetails"></div>
+          <div class="contact-cta">
+            <a class="contact-email-btn" id="contactEmailBtn" href="#">
+              <span>Get in Touch</span>
+              <span class="arrow">&rarr;</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer id="footer">
+        <div class="footer-container">
+          <div class="footer-top">
+            <h2 class="footer-name" id="footerName"></h2>
+          </div>
+          <div class="footer-links" id="footerLinks"></div>
+          <div class="footer-bottom">
+            <p class="mn" id="footerCopyright"></p>
+            <p class="mn" id="footerTagline"></p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- GSAP + ScrollTrigger CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- Lenis Smooth Scroll CDN -->
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+
+    <!-- Main Script -->
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+{
+  "heading": "Skills & Expertise",
+  "categories": [
+    {
+      "name": "Languages",
+      "items": [
+        "SQL",
+        "MySQL",
+        "PostgreSQL",
+        "T-SQL",
+        "Python",
+        "DAX"
+      ]
+    },
+    {
+      "name": "Tools & Platforms",
+      "items": [
+        "Excel",
+        "Power BI",
+        "Tableau",
+        "Git"
+      ]
+    },
+    {
+      "name": "Technical",
+      "items": [
+        "Forecasting",
+        "Statistical Analysis",
+        "Regression Analysis",
+        "A/B Testing",
+        "Data Validation",
+        "ETL",
+        "Data Warehousing",
+        "Dashboard Development",
+        "KPI Reporting",
+        "Revenue Analysis",
+        "Retention Analysis",
+        "Data Storytelling",
+        "Stakeholder Reporting",
+        "Process Improvement"
+      ]
+    }
+  ]
+}

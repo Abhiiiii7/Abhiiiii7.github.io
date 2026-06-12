@@ -1,0 +1,13 @@
+{
+  "greeting": "Hello, I'm",
+  "name": "Abhinav Varma Konderu",
+  "nameLine1": "Abhinav",
+  "nameLine2": "Varma Konderu",
+  "title": "Business Analytics Graduate Student",
+  "tagline": "Business Analytics graduate student with experience delivering SQL, Power BI, and Python-driven analytics solutions to improve forecasting, operational efficiency, and business decision-making across healthcare, retail, and D2C operations. Skilled in KPI reporting, dashboard development, and transforming complex datasets into actionable insights.",
+  "ctaText": "View My Work",
+  "ctaLink": "#projects",
+  "socialLinks": {
+    "email": "abhinavvarmakonderu@gmail.com"
+  }
+}
