@@ -3,7 +3,46 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
+
+    <title>Abhinav Varma Konderu — Data Analyst &amp; Business Analytics</title>
+    <meta
+      name="description"
+      content="Abhinav Varma Konderu — Business Analytics M.S. student and data analyst. SQL, Power BI, and Python for forecasting, BI dashboards, and analytics that drive business decisions."
+    />
+    <meta name="author" content="Abhinav Varma Konderu" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#edf1e8" />
+    <link rel="canonical" href="https://abhiiiii7.github.io/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://abhiiiii7.github.io/" />
+    <meta
+      property="og:title"
+      content="Abhinav Varma Konderu — Data Analyst &amp; Business Analytics"
+    />
+    <meta
+      property="og:description"
+      content="Abhinav Varma Konderu — Business Analytics M.S. student and data analyst. SQL, Power BI, and Python for forecasting, BI dashboards, and analytics that drive business decisions."
+    />
+    <meta property="og:image" content="https://abhiiiii7.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Abhinav Varma Konderu — Data Analyst &amp; Business Analytics"
+    />
+    <meta
+      name="twitter:description"
+      content="Abhinav Varma Konderu — Business Analytics M.S. student and data analyst. SQL, Power BI, and Python for forecasting, BI dashboards, and analytics that drive business decisions."
+    />
+    <meta name="twitter:image" content="https://abhiiiii7.github.io/assets/og-image.png" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
 
     <!-- Fonts: Playfair Display (italic serif), Barlow (condensed body), Space Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -15,28 +54,64 @@
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- JSON-LD Person schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Abhinav Varma Konderu",
+        "jobTitle": "Data Analyst",
+        "url": "https://abhiiiii7.github.io/",
+        "email": "mailto:abhinavvarmakonderu@gmail.com",
+        "alumniOf": [
+          {
+            "@type": "CollegeOrUniversity",
+            "name": "California State University, Northridge"
+          },
+          {
+            "@type": "CollegeOrUniversity",
+            "name": "Anurag University"
+          }
+        ],
+        "sameAs": [
+          "https://www.linkedin.com/in/abhinav-varma723",
+          "https://github.com/Abhiiiii7"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Los Angeles",
+          "addressRegion": "CA",
+          "addressCountry": "US"
+        }
+      }
+    </script>
   </head>
   <body>
-    <!-- Page transition overlay -->
-    <div class="transition" aria-hidden="true">
-      <div class="transition-overlay overlay-1"></div>
-      <div class="transition-overlay overlay-2"></div>
-      <div class="transition-overlay overlay-3"></div>
-    </div>
+    <!-- Skip link -->
+    <a class="skip-link" href="#main">Skip to content</a>
 
-    <!-- Loading state (visible until JS loads data) -->
-    <div class="loading-screen" id="loadingScreen">
-      <div class="loading-spinner"></div>
-    </div>
-
-    <div class="page home-page">
+    <div class="page home-page" id="main">
       <!-- Navigation -->
       <nav>
         <div class="logo">
-          <a href="#hero" class="logo-text mn" id="navLogo">PORTFOLIO</a>
+          <a href="#hero" class="logo-text mn" id="navLogo">AV</a>
         </div>
-        <div class="nav-links" id="navLinks"></div>
-        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <div class="nav-links" id="navLinks">
+          <a href="#about">About</a>
+          <a href="#experience">Experience</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#education">Education</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+          aria-controls="navOverlay"
+        >
           <span class="menu-bar"></span>
           <span class="menu-bar"></span>
         </button>
@@ -44,22 +119,35 @@
 
       <!-- Mobile menu overlay -->
       <div class="nav-overlay" id="navOverlay">
-        <div class="nav-overlay-items" id="navOverlayItems"></div>
+        <div class="nav-overlay-items" id="navOverlayItems">
+          <a href="#about">About</a>
+          <a href="#experience">Experience</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#education">Education</a>
+          <a href="#contact">Contact</a>
+        </div>
       </div>
 
       <!-- Hero Section -->
       <section class="hero" id="hero">
         <div class="hero-content">
-          <p class="hero-greeting mn" id="heroGreeting"></p>
+          <p class="hero-greeting mn" id="heroGreeting">Hello, I'm</p>
           <div class="hero-name-wrapper">
-            <h1 class="hero-name-line hero-name-1" id="heroName1"></h1>
-            <h1 class="hero-name-line hero-name-2" id="heroName2"></h1>
+            <h1>
+              <span class="hero-name-line hero-name-1" id="heroName1">Abhinav</span>
+              <span class="hero-name-line hero-name-2" id="heroName2">Varma Konderu</span>
+            </h1>
           </div>
-          <p class="hero-title" id="heroTitle"></p>
+          <p class="hero-title" id="heroTitle">
+            Data Analyst &middot; M.S. Business Analytics @ CSUN
+          </p>
         </div>
         <div class="hero-footer">
           <div class="hero-footer-left">
-            <p class="mn" id="heroTagline"></p>
+            <p class="mn" id="heroTagline">
+              SQL &middot; Power BI &middot; Python — turning data into forecasts and decisions
+            </p>
           </div>
           <div class="hero-footer-center">
             <div class="scroll-indicator">
@@ -68,7 +156,13 @@
             </div>
           </div>
           <div class="hero-footer-right">
-            <div class="hero-social-links" id="heroSocialLinks"></div>
+            <div class="hero-social-links" id="heroSocialLinks">
+              <a href="https://github.com/Abhiiiii7" target="_blank" rel="noopener">GitHub</a>
+              <a href="https://www.linkedin.com/in/abhinav-varma723" target="_blank" rel="noopener"
+                >LinkedIn</a
+              >
+              <a href="mailto:abhinavvarmakonderu@gmail.com">Email</a>
+            </div>
           </div>
         </div>
       </section>
@@ -80,11 +174,37 @@
         </div>
         <div class="about-content">
           <div class="about-text">
-            <h2 class="about-heading" id="aboutHeading"></h2>
-            <div class="about-bio" id="aboutBio"></div>
-            <p class="about-philosophy mn" id="aboutPhilosophy"></p>
+            <h2 class="about-heading" id="aboutHeading">About Me</h2>
+            <div class="about-bio" id="aboutBio">
+              <p>
+                I'm a Business Analytics graduate student (M.S., CSUN) and data analyst who turns
+                messy operational data into forecasts, dashboards, and decisions. Over two years at
+                Indo Swiss Remedies I built SQL, Power BI, and Python workflows that cut stockouts,
+                automated reporting, and gave leaders visibility across regions and product lines.
+              </p>
+              <p>
+                I've also co-founded a D2C brand, so I read numbers with a P&amp;L in mind —
+                acquisition, retention, margin, and what actually moves revenue.
+              </p>
+            </div>
+            <p class="about-philosophy mn" id="aboutPhilosophy">
+              SQL / MySQL / PostgreSQL / T-SQL / Repeat
+            </p>
           </div>
-          <div class="about-highlights" id="aboutHighlights"></div>
+          <div class="about-highlights" id="aboutHighlights">
+            <div class="highlight-item">
+              <div class="highlight-value">2+</div>
+              <div class="highlight-label">Years in Analytics</div>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-value">18%</div>
+              <div class="highlight-label">Fewer Stockouts</div>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-value">$70K</div>
+              <div class="highlight-label">D2C Revenue Scaled</div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -93,7 +213,96 @@
         <div class="section-label mn">
           <span id="experienceLabel">Experience</span>
         </div>
-        <div class="experience-list" id="experienceList"></div>
+        <div class="experience-list" id="experienceList">
+          <div class="experience-item">
+            <div class="experience-date">Apr 2022 – May 2024</div>
+            <div class="experience-info">
+              <div class="experience-head">
+                <img
+                  class="experience-logo"
+                  src="assets/logos/indo-swiss.svg"
+                  alt="Indo Swiss Remedies logo"
+                  width="48"
+                  height="48"
+                  loading="lazy"
+                />
+                <div class="experience-headings">
+                  <h3>Data Analyst Intern → Data Analyst</h3>
+                  <p class="experience-company">Indo Swiss Remedies Pvt Ltd</p>
+                </div>
+              </div>
+              <div class="experience-description">
+                <ul class="experience-bullets">
+                  <li>
+                    Promoted from intern to full-time Data Analyst after strong performance in
+                    forecasting, reporting automation, and operational analytics.
+                  </li>
+                  <li>
+                    Built forecasting models with supply chain &amp; operations that cut stockouts
+                    18% and saved $20,000 in warehousing costs.
+                  </li>
+                  <li>
+                    Analyzed sales across 60+ pharmaceutical product lines in SQL, improving
+                    forecasting accuracy 12% and flagging underperforming segments.
+                  </li>
+                  <li>
+                    Designed executive Power BI KPI dashboards with drill-through, replacing manual
+                    spreadsheets across 10+ regions and saving 15+ hours monthly.
+                  </li>
+                  <li>
+                    Automated Python validation across 20+ recurring reports, cutting reporting
+                    errors 15% and freeing 6+ analyst hours weekly.
+                  </li>
+                  <li>
+                    Standardized reporting data across 60+ product lines, reducing downstream errors
+                    22%.
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="experience-location"></div>
+          </div>
+          <div class="experience-item">
+            <div class="experience-date">Feb 2023 – Jul 2024</div>
+            <div class="experience-info">
+              <div class="experience-head">
+                <img
+                  class="experience-logo"
+                  src="assets/logos/butterfly-pea.svg"
+                  alt="Butterfly Pea Flower Herbal Tea logo"
+                  width="48"
+                  height="48"
+                  loading="lazy"
+                />
+                <div class="experience-headings">
+                  <h3>Co-Founder — D2C Herbal Tea Brand</h3>
+                  <p class="experience-company">Butterfly Pea Flower Herbal Tea</p>
+                </div>
+              </div>
+              <div class="experience-description">
+                <ul class="experience-bullets">
+                  <li>
+                    Scaled the brand to $70K revenue with 32% quarter-over-quarter growth via
+                    acquisition, retention, and sales analysis.
+                  </li>
+                  <li>
+                    Built Power BI dashboards on Shopify sales + customer data to track KPIs,
+                    revenue, and inventory for planning and investor decks.
+                  </li>
+                  <li>
+                    Closed repeat-purchase gaps with automated WhatsApp engagement, lifting repeat
+                    sales 40% while cutting COD/RTO losses.
+                  </li>
+                  <li>
+                    Guided inventory, marketing spend, and retention strategy from product, channel,
+                    and cohort trends.
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="experience-location"></div>
+          </div>
+        </div>
       </section>
 
       <!-- Skills Section -->
@@ -102,9 +311,54 @@
           <span id="skillsLabel">Skills</span>
         </div>
         <div class="skills-header">
-          <h2 id="skillsHeading"></h2>
+          <h2 id="skillsHeading">Skills &amp; Expertise</h2>
         </div>
-        <div class="skills-grid" id="skillsGrid"></div>
+        <div class="skills-grid" id="skillsGrid">
+          <div class="skill-category">
+            <div class="skill-category-name">Languages &amp; Query</div>
+            <div class="skill-items">
+              <span class="skill-tag">SQL</span>
+              <span class="skill-tag">MySQL</span>
+              <span class="skill-tag">PostgreSQL</span>
+              <span class="skill-tag">T-SQL</span>
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">DAX</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <div class="skill-category-name">BI &amp; Tools</div>
+            <div class="skill-items">
+              <span class="skill-tag">Excel</span>
+              <span class="skill-tag">Power BI</span>
+              <span class="skill-tag">Tableau</span>
+              <span class="skill-tag">Git</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <div class="skill-category-name">Methods</div>
+            <div class="skill-items">
+              <span class="skill-tag">Forecasting</span>
+              <span class="skill-tag">Statistical Analysis</span>
+              <span class="skill-tag">Regression Analysis</span>
+              <span class="skill-tag">A/B Testing</span>
+              <span class="skill-tag">Data Validation</span>
+              <span class="skill-tag">ETL</span>
+              <span class="skill-tag">Data Warehousing</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <div class="skill-category-name">Business Intelligence</div>
+            <div class="skill-items">
+              <span class="skill-tag">Dashboard Development</span>
+              <span class="skill-tag">KPI Reporting</span>
+              <span class="skill-tag">Revenue Analysis</span>
+              <span class="skill-tag">Retention Analysis</span>
+              <span class="skill-tag">Data Storytelling</span>
+              <span class="skill-tag">Stakeholder Reporting</span>
+              <span class="skill-tag">Process Improvement</span>
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- Projects Section -->
@@ -112,8 +366,222 @@
         <div class="section-label mn">
           <span id="projectsLabel">Projects</span>
         </div>
-        <h2 class="projects-heading" id="projectsHeading"></h2>
-        <div class="projects-list" id="projectsList"></div>
+        <h2 class="projects-heading" id="projectsHeading">Selected Projects</h2>
+        <div class="projects-list" id="projectsList">
+          <div class="project-item">
+            <div class="project-visual">
+              <div class="project-visual-inner" aria-hidden="true">
+                Creator Economy &amp; Algorithmic Performance Analytics
+              </div>
+              <img
+                class="project-image"
+                src="assets/projects/creator-economy.webp"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="project-info">
+              <div class="project-category">Analytics &amp; Modeling</div>
+              <h3 class="project-name">Creator Economy &amp; Algorithmic Performance Analytics</h3>
+              <p class="project-description">
+                Regression analysis of 2,467 promotional posts across 800 influencers, quantifying
+                how creator authority and early engagement drive amplification. Engineered normalized
+                efficiency KPIs (CTR, clicks/1K reach, saves/1K reach) to expose a scale-efficiency
+                tradeoff and guide creator selection.
+              </p>
+              <div class="project-tech">
+                <span>R</span>
+                <span>Regression</span>
+                <span>Statistics</span>
+              </div>
+              <div class="project-links">
+                <a
+                  href="https://github.com/Abhiiiii7/authority-to-visibility-amplification"
+                  target="_blank"
+                  rel="noopener"
+                  >Source &rarr;</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="project-item">
+            <div class="project-visual">
+              <div class="project-visual-inner" aria-hidden="true">
+                Healthcare Cost &amp; Pricing Intelligence
+              </div>
+              <img
+                class="project-image"
+                src="assets/projects/healthcare-pricing.webp"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="project-info">
+              <div class="project-category">Data Engineering &amp; BI</div>
+              <h3 class="project-name">Healthcare Cost &amp; Pricing Intelligence</h3>
+              <p class="project-description">
+                PostgreSQL pipeline standardizing 200+ hospital datasets into a 24-column model
+                spanning 100K+ payer-procedure combinations, improving data quality 15%. Power BI
+                dashboards surface insurer-level price variation for decision support.
+              </p>
+              <div class="project-tech">
+                <span>PostgreSQL</span>
+                <span>Power BI</span>
+                <span>ETL</span>
+              </div>
+              <div class="project-links">
+                <a
+                  href="https://github.com/Abhiiiii7/healthcare-data-analysis-using-powerbi"
+                  target="_blank"
+                  rel="noopener"
+                  >Source &rarr;</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="project-item">
+            <div class="project-visual">
+              <div class="project-visual-inner" aria-hidden="true">
+                E-Commerce Revenue Forecasting &amp; Demand Analytics
+              </div>
+              <img
+                class="project-image"
+                src="assets/projects/ecommerce-forecast.webp"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="project-info">
+              <div class="project-category">Forecasting &amp; BI</div>
+              <h3 class="project-name">E-Commerce Revenue Forecasting &amp; Demand Analytics</h3>
+              <p class="project-description">
+                Analyzed 100K+ orders and $15.4M in revenue to surface seasonality, demand patterns,
+                and revenue concentration. Built a Power BI dashboard and forecasting model
+                supporting inventory and revenue planning.
+              </p>
+              <div class="project-tech">
+                <span>PostgreSQL</span>
+                <span>Power BI</span>
+                <span>Forecasting</span>
+              </div>
+              <div class="project-links">
+                <a
+                  href="https://github.com/Abhiiiii7/Brazil-Ecommerce-Revenue-Analysis"
+                  target="_blank"
+                  rel="noopener"
+                  >Source &rarr;</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="project-item">
+            <div class="project-visual">
+              <div class="project-visual-inner" aria-hidden="true">
+                Retail Data Analytics (Python + SQL)
+              </div>
+              <img
+                class="project-image"
+                src="assets/projects/retail-analytics.webp"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="project-info">
+              <div class="project-category">Analytics</div>
+              <h3 class="project-name">Retail Data Analytics (Python + SQL)</h3>
+              <p class="project-description">
+                End-to-end retail analytics integrating Python and SQL across sales, inventory, and
+                performance to surface operational insight.
+              </p>
+              <div class="project-tech">
+                <span>Python</span>
+                <span>SQL</span>
+                <span>Pandas</span>
+              </div>
+              <div class="project-links">
+                <a
+                  href="https://github.com/Abhiiiii7/retail-data-analytics-project-python-sql-integration"
+                  target="_blank"
+                  rel="noopener"
+                  >Source &rarr;</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="project-item">
+            <div class="project-visual">
+              <div class="project-visual-inner" aria-hidden="true">
+                ICU Mortality Analysis (Sepsis-ARDS)
+              </div>
+              <img
+                class="project-image"
+                src="assets/projects/icu-mortality.webp"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="project-info">
+              <div class="project-category">Healthcare Analytics</div>
+              <h3 class="project-name">ICU Mortality Analysis (Sepsis-ARDS)</h3>
+              <p class="project-description">
+                SQL + Python cohort analysis of Sepsis-ARDS ICU patients — cohort building, cleaning,
+                EDA, and outcome insight into mortality drivers.
+              </p>
+              <div class="project-tech">
+                <span>SQL</span>
+                <span>Python</span>
+                <span>EDA</span>
+              </div>
+              <div class="project-links">
+                <a
+                  href="https://github.com/Abhiiiii7/Predicting-Mortality"
+                  target="_blank"
+                  rel="noopener"
+                  >Source &rarr;</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="project-item">
+            <div class="project-visual">
+              <div class="project-visual-inner" aria-hidden="true">
+                Supply Chain Analytics — FMCG (AtliQ Mart)
+              </div>
+              <img
+                class="project-image"
+                src="assets/projects/supply-chain.webp"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="project-info">
+              <div class="project-category">Supply Chain BI</div>
+              <h3 class="project-name">Supply Chain Analytics — FMCG (AtliQ Mart)</h3>
+              <p class="project-description">
+                Power BI supply-chain analytics for an FMCG distributor — tracking service levels,
+                on-time/in-full delivery, and demand reliability.
+              </p>
+              <div class="project-tech">
+                <span>Power BI</span>
+                <span>SQL</span>
+                <span>DAX</span>
+              </div>
+              <div class="project-links">
+                <a
+                  href="https://github.com/Abhiiiii7/supply-chain-analysis-in-the-fmcg-domain-atliqmart"
+                  target="_blank"
+                  rel="noopener"
+                  >Source &rarr;</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- Education Section -->
@@ -121,8 +589,33 @@
         <div class="section-label mn">
           <span id="educationLabel">Education</span>
         </div>
-        <h2 class="education-heading" id="educationHeading"></h2>
-        <div class="education-list" id="educationList"></div>
+        <h2 class="education-heading" id="educationHeading">Education</h2>
+        <div class="education-list" id="educationList">
+          <div class="education-item">
+            <div class="education-year">2024 – 2026</div>
+            <div class="education-info">
+              <h3>M.S. Business Analytics</h3>
+              <p class="education-institution">California State University, Northridge</p>
+              <p class="education-meta">Business Analytics · Los Angeles, CA</p>
+            </div>
+          </div>
+          <div class="education-item">
+            <div class="education-year">2020 – 2024</div>
+            <div class="education-info">
+              <h3>B.Tech. Computer Science</h3>
+              <p class="education-institution">Anurag University</p>
+              <p class="education-meta">Computer Science · Hyderabad, India</p>
+            </div>
+          </div>
+          <div class="certifications-list">
+            <h4>Certifications</h4>
+            <p>Azure Fundamentals (AZ-900)</p>
+            <p>Power Platform Fundamentals (PL-900)</p>
+            <p>Google Data Analytics</p>
+            <p>Deloitte Data Analytics</p>
+            <p>Python &amp; Data Science</p>
+          </div>
+        </div>
       </section>
 
       <!-- Contact Section -->
@@ -131,11 +624,43 @@
           <div class="section-label mn">
             <span id="contactLabel">Contact</span>
           </div>
-          <h2 class="contact-heading" id="contactHeading"></h2>
-          <p class="contact-subheading" id="contactSubheading"></p>
-          <div class="contact-details" id="contactDetails"></div>
+          <h2 class="contact-heading" id="contactHeading">Get In Touch</h2>
+          <p class="contact-subheading" id="contactSubheading">
+            Open to data analyst and business analytics roles. Have a role, a question, or a dataset
+            worth digging into? Let's talk.
+          </p>
+          <div class="contact-details" id="contactDetails">
+            <div class="contact-detail-item">
+              <div class="contact-detail-label">Email</div>
+              <div class="contact-detail-value">
+                <a href="mailto:abhinavvarmakonderu@gmail.com">abhinavvarmakonderu@gmail.com</a>
+              </div>
+            </div>
+            <div class="contact-detail-item">
+              <div class="contact-detail-label">LinkedIn</div>
+              <div class="contact-detail-value">
+                <a href="https://www.linkedin.com/in/abhinav-varma723" target="_blank" rel="noopener"
+                  >abhinav-varma723</a
+                >
+              </div>
+            </div>
+            <div class="contact-detail-item">
+              <div class="contact-detail-label">GitHub</div>
+              <div class="contact-detail-value">
+                <a href="https://github.com/Abhiiiii7" target="_blank" rel="noopener">Abhiiiii7</a>
+              </div>
+            </div>
+            <div class="contact-detail-item">
+              <div class="contact-detail-label">Location</div>
+              <div class="contact-detail-value">Los Angeles, CA</div>
+            </div>
+            <div class="contact-detail-item">
+              <div class="contact-detail-label">Status</div>
+              <div class="contact-detail-value">Open to opportunities</div>
+            </div>
+          </div>
           <div class="contact-cta">
-            <a class="contact-email-btn" id="contactEmailBtn" href="#">
+            <a class="contact-email-btn" id="contactEmailBtn" href="mailto:abhinavvarmakonderu@gmail.com">
               <span>Get in Touch</span>
               <span class="arrow">&rarr;</span>
             </a>
@@ -147,23 +672,48 @@
       <footer id="footer">
         <div class="footer-container">
           <div class="footer-top">
-            <h2 class="footer-name" id="footerName"></h2>
+            <h2 class="footer-name" id="footerName">Abhinav Varma Konderu</h2>
           </div>
-          <div class="footer-links" id="footerLinks"></div>
+          <div class="footer-links" id="footerLinks">
+            <a class="footer-link" href="mailto:abhinavvarmakonderu@gmail.com">Email</a>
+            <a
+              class="footer-link"
+              href="https://www.linkedin.com/in/abhinav-varma723"
+              target="_blank"
+              rel="noopener"
+              >LinkedIn</a
+            >
+            <a class="footer-link" href="https://github.com/Abhiiiii7" target="_blank" rel="noopener"
+              >GitHub</a
+            >
+          </div>
           <div class="footer-bottom">
-            <p class="mn" id="footerCopyright"></p>
-            <p class="mn" id="footerTagline"></p>
+            <p class="mn" id="footerCopyright">© 2026 Abhinav Varma Konderu</p>
+            <p class="mn" id="footerTagline">Data into decisions.</p>
           </div>
         </div>
       </footer>
     </div>
 
     <!-- GSAP + ScrollTrigger CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <!-- SRI: sha384 hashes computed from the live cdnjs/unpkg files (verified locally). -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha384-g4NTh/Iv5PPU4xPyhEWqPcwtNXOvdaDI8LLnyYfyNZOjKJeYQyjzQ9X5275eBjpt"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+      integrity="sha384-Z3REaz79l2IaAZqJsSABtTbhjgOUYyV3p90XNnAPCSHg3EMTz1fouunq9WZRtj3d"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- Lenis Smooth Scroll CDN -->
-    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+    <script
+      src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"
+      integrity="sha384-tKsJDT6PlUI0pSBt9/sBKJluKgA19/a6mBrDsZaXotLB4ZYfMGM6xt6/WgGpYhTm"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- Main Script -->
     <script src="assets/js/main.js"></script>

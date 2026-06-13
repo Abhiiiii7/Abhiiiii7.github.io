@@ -11,6 +11,7 @@
   --fg: #141414;
   --fg-muted: #555555;
   --accent1: #ed6a5a;
+  --accent1-deep: #b23a28; /* AA-compliant coral for accent TEXT — 5.2:1 on #edf1e8 */
   --accent2: #f4f1bb;
   --accent3: #9bc1bc;
   --accent4: #5d576b;
@@ -63,6 +64,18 @@ a:hover {
   color: var(--accent1);
 }
 
+/* --- Focus visibility (keyboard) --- */
+a:focus-visible,
+button:focus-visible,
+.nav-links a:focus-visible,
+.contact-email-btn:focus-visible,
+.skip-link:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--accent1-deep);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
 /* --- Typography --- */
 h1, h2, h3, h4 {
   font-family: var(--font-display);
@@ -105,63 +118,29 @@ p {
   color: var(--fg-muted);
 }
 
-/* --- Loading Screen --- */
-.loading-screen {
-  position: fixed;
-  inset: 0;
-  background: var(--bg);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 200000;
-  transition: opacity 0.5s ease, visibility 0.5s ease;
-}
-
-.loading-screen.hidden {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-}
-
-.loading-spinner {
-  width: 32px;
-  height: 32px;
-  border: 2px solid var(--bg2);
-  border-top-color: var(--accent1);
-  border-radius: 50%;
-  animation: spin 0.8s linear infinite;
-}
-
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
-
-/* --- Page Transition --- */
-.transition {
-  position: fixed;
-  inset: 0;
-  z-index: 100000;
-  pointer-events: none;
-}
-
-.transition-overlay {
+/* --- Skip Link --- */
+.skip-link {
   position: absolute;
-  inset: 0;
-  transform: scaleY(1);
-  transform-origin: top;
-  will-change: transform;
+  left: -9999px;
+  top: 0;
+  z-index: 200000;
+  padding: 0.75rem 1.25rem;
+  background: var(--fg);
+  color: var(--bg);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: 0 0 0.5rem 0;
 }
 
-.transition-overlay.overlay-1 {
-  background-color: var(--bg);
+.skip-link:focus {
+  left: 0;
+  top: 0;
 }
 
-.transition-overlay.overlay-2 {
-  background-color: var(--accent1);
-}
-
-.transition-overlay.overlay-3 {
-  background-color: var(--bg2);
+.skip-link:hover {
+  color: var(--bg);
 }
 
 /* --- Navigation --- */
@@ -316,7 +295,7 @@ nav {
 }
 
 .section-label span {
-  color: var(--accent1);
+  color: var(--accent1-deep);
 }
 
 /* --- Hero Section --- */
@@ -340,7 +319,7 @@ nav {
 
 .hero-greeting {
   margin-bottom: 1.25rem;
-  color: var(--accent1);
+  color: var(--accent1-deep);
   font-size: 0.9rem;
   letter-spacing: 0.25em;
 }
@@ -353,12 +332,10 @@ nav {
   font-size: clamp(3.5rem, 14vw, 12rem);
   line-height: 0.9;
   letter-spacing: -0.03em;
-  will-change: transform, opacity;
 }
 
 .hero-name-line .char {
   display: inline-block;
-  will-change: transform, opacity;
 }
 
 .hero-name-1 {
@@ -367,7 +344,7 @@ nav {
 
 .hero-name-2 {
   transform: translateX(5%);
-  color: var(--accent1);
+  color: var(--accent1-deep);
 }
 
 .hero-title {
@@ -474,7 +451,7 @@ nav {
 }
 
 .about-philosophy {
-  color: var(--accent1) !important;
+  color: var(--accent1-deep) !important;
   font-size: 0.85rem !important;
   padding: 1rem 0;
   border-top: 2px solid var(--fg);
@@ -498,7 +475,7 @@ nav {
   font-style: italic;
   font-size: clamp(2.5rem, 4vw, 4rem);
   font-weight: 700;
-  color: var(--accent1);
+  color: var(--accent1-deep);
   line-height: 1;
   margin-bottom: 0.5rem;
 }
@@ -546,7 +523,7 @@ nav {
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--accent1);
+  color: var(--accent1-deep);
   padding-top: 0.25rem;
 }
 
@@ -558,6 +535,26 @@ nav {
   font-style: normal;
 }
 
+.experience-head {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.experience-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  flex-shrink: 0;
+  display: block;
+  border: 1px solid rgba(20, 20, 20, 0.08);
+}
+
+.experience-headings h3 {
+  margin-bottom: 0.35rem;
+}
+
 .experience-company {
   font-family: var(--font-mono);
   font-size: 0.75rem;
@@ -567,11 +564,45 @@ nav {
   margin-bottom: 0.75rem;
 }
 
+.experience-headings .experience-company {
+  margin-bottom: 0;
+}
+
 .experience-description {
   font-size: 0.95rem;
   color: var(--fg-muted);
   line-height: 1.6;
   max-width: 600px;
+}
+
+.experience-bullets {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.experience-bullets li {
+  position: relative;
+  padding-left: 1.1rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  color: var(--fg-muted);
+  line-height: 1.6;
+}
+
+.experience-bullets li:last-child {
+  margin-bottom: 0;
+}
+
+.experience-bullets li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent1);
 }
 
 .experience-location {
@@ -621,17 +652,17 @@ nav {
   box-shadow: 6px 6px 0px var(--fg);
 }
 
-.skill-category:nth-child(4n+1) .skill-category-name { color: var(--accent1); }
+.skill-category:nth-child(4n+1) .skill-category-name { color: var(--accent1-deep); }
 .skill-category:nth-child(4n+2) .skill-category-name { color: var(--accent4); }
-.skill-category:nth-child(4n+3) .skill-category-name { color: var(--accent3); border-color: var(--accent3); }
-.skill-category:nth-child(4n+4) .skill-category-name { color: var(--accent1); }
+.skill-category:nth-child(4n+3) .skill-category-name { color: var(--accent4); border-color: var(--accent3); }
+.skill-category:nth-child(4n+4) .skill-category-name { color: var(--accent1-deep); }
 
 .skill-category-name {
   font-family: var(--font-mono);
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  color: var(--accent1);
+  color: var(--accent1-deep);
   margin-bottom: 1.5rem;
   padding-bottom: 0.75rem;
   border-bottom: 1px solid var(--bg2);
@@ -715,6 +746,20 @@ nav {
   transform: translate(-3px, -3px);
 }
 
+.project-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s var(--ease-out);
+}
+
+.project-visual:hover .project-image {
+  transform: scale(1.04);
+}
+
 .project-visual-inner {
   font-family: var(--font-display);
   font-style: italic;
@@ -739,7 +784,7 @@ nav {
   font-size: 0.65rem;
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  color: var(--accent1);
+  color: var(--accent1-deep);
 }
 
 .project-name {
@@ -787,7 +832,7 @@ nav {
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--accent1);
+  color: var(--accent1-deep);
   position: relative;
 }
 
@@ -810,7 +855,7 @@ nav {
 }
 
 .project-links a:hover {
-  color: var(--accent1);
+  color: var(--accent1-deep);
 }
 
 /* --- Education Section --- */
@@ -843,7 +888,7 @@ nav {
 .education-year {
   font-family: var(--font-mono);
   font-size: 0.75rem;
-  color: var(--accent1);
+  color: var(--accent1-deep);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   padding-top: 0.25rem;
@@ -871,24 +916,6 @@ nav {
   color: var(--fg-muted);
 }
 
-.education-honors {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 0.75rem;
-}
-
-.education-honors span {
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  padding: 0.3rem 0.6rem;
-  background: rgba(237, 106, 90, 0.12);
-  border-radius: 2rem;
-  color: var(--accent1);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
 .certifications-list {
   margin-top: 2rem;
   padding-top: 2rem;
@@ -900,7 +927,7 @@ nav {
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  color: var(--accent1);
+  color: var(--accent1-deep);
   margin-bottom: 1rem;
   font-style: normal;
 }
@@ -956,7 +983,7 @@ nav {
   font-size: 0.65rem;
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  color: var(--accent1);
+  color: var(--accent1-deep);
   margin-bottom: 0.5rem;
 }
 
@@ -1077,7 +1104,7 @@ footer {
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: rgba(237, 241, 232, 0.5);
+  color: rgba(237, 241, 232, 0.75); /* 9.4:1 on #141414 */
   transition: color 0.3s ease;
 }
 
@@ -1095,7 +1122,7 @@ footer {
 
 .footer-bottom p {
   font-size: 0.7rem;
-  color: rgba(237, 241, 232, 0.4);
+  color: rgba(237, 241, 232, 0.75); /* 9.4:1 on #141414 */
 }
 
 /* Footer particles */
@@ -1105,7 +1132,6 @@ footer {
   height: 12px;
   border-radius: 50%;
   pointer-events: none;
-  will-change: transform, opacity;
 }
 
 /* --- Floating Decorative Tags --- */
@@ -1121,7 +1147,6 @@ footer {
   background: var(--bg);
   pointer-events: none;
   z-index: 1;
-  will-change: transform;
 }
 
 .floating-tag:nth-child(1) { transform: rotate(-12deg); }
@@ -1138,6 +1163,50 @@ footer {
 .contact-content {
   opacity: 1;
   transform: none;
+}
+
+/* --- Reduced Motion --- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Kill decorative CSS animations outright */
+  .scroll-line,
+  .contact-email-btn::before {
+    animation: none !important;
+  }
+
+  /* Ensure all GSAP-targeted / fallback elements stay visible */
+  .hero-name-line,
+  .hero-name-line .char,
+  .hero-name-2,
+  .about-content,
+  .experience-item,
+  .skill-category,
+  .project-item,
+  .education-item,
+  .contact-content,
+  .floating-tag,
+  .footer-particle {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* Restore hero name horizontal offsets that the rule above flattened */
+  .hero-name-1 {
+    transform: translateX(-3%) !important;
+  }
+
+  .hero-name-2 {
+    transform: translateX(5%) !important;
+  }
 }
 
 /* --- Responsive --- */
