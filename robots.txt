@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://abhiiiii7.github.io/sitemap.xml
+Sitemap: https://abhinavvarma.com/sitemap.xml
