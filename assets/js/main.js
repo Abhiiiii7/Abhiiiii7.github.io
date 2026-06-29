@@ -456,6 +456,158 @@
   }
 
   // =========================================================================
+  // Dashboard lightbox / gallery (works with or without motion/GSAP)
+  // =========================================================================
+  var GALLERIES = {
+    'ai-supply-chain': [
+      { src: 'assets/projects/ai-supply-chain/01-overview.webp', caption: 'Supply chain overview — KPI cards, profit by region and shipping mode' },
+      { src: 'assets/projects/ai-supply-chain/02-regional.webp', caption: 'Regional delivery and risk intelligence' },
+      { src: 'assets/projects/ai-supply-chain/03-profitability.webp', caption: 'Profitability intelligence' },
+      { src: 'assets/projects/ai-supply-chain/04-shipping.webp', caption: 'Shipping-mode delivery-risk intelligence' },
+      { src: 'assets/projects/ai-supply-chain/05-ai-insights.webp', caption: 'GenAI-generated executive insights' },
+    ],
+    'healthcare-pricing': [
+      { src: 'assets/projects/healthcare-pricing/01-median-price.webp', caption: 'Median negotiated price by insurer' },
+      { src: 'assets/projects/healthcare-pricing/02-cpt-mean.webp', caption: 'Mean price by CPT procedure' },
+      { src: 'assets/projects/healthcare-pricing/03-payer-gross.webp', caption: 'Mean gross charge by CPT and payer' },
+      { src: 'assets/projects/healthcare-pricing/04-payer-mix.webp', caption: 'Payer-mix distribution' },
+      { src: 'assets/projects/healthcare-pricing/05-mean-vs-median.webp', caption: 'Mean vs. median gross charge' },
+    ],
+    'ecommerce-forecast': [
+      { src: 'assets/projects/ecommerce-forecast/01-executive.webp', caption: 'Executive revenue overview' },
+      { src: 'assets/projects/ecommerce-forecast/02-forecast.webp', caption: 'Revenue forecast projection' },
+      { src: 'assets/projects/ecommerce-forecast/03-seasonality.webp', caption: 'Seasonality and demand patterns' },
+      { src: 'assets/projects/ecommerce-forecast/04-seller.webp', caption: 'Seller performance analysis' },
+    ],
+    'creator-economy': [
+      { src: 'assets/projects/creator-economy/01-chart.webp', caption: 'Algorithmic amplification analysis' },
+      { src: 'assets/projects/creator-economy/02-chart.webp', caption: 'Engagement efficiency analysis' },
+      { src: 'assets/projects/creator-economy/03-chart.webp', caption: 'Creator authority vs. visibility' },
+      { src: 'assets/projects/creator-economy/04-chart.webp', caption: 'Regression model output' },
+      { src: 'assets/projects/creator-economy/05-chart.webp', caption: 'Scale-efficiency tradeoff' },
+    ],
+    'indo-swiss': [
+      { src: 'assets/exp/indo-swiss-convention.webp', caption: '10th Annual Convention — Indo Swiss Remedies' },
+    ],
+    dataharbor: [
+      { src: 'assets/exp/dataharbor-bootcamp.webp', caption: 'DataHarbor bootcamp for CS students — Anurag University' },
+    ],
+    nilora: [
+      { src: 'assets/exp/nilora-cofounder.webp', caption: 'Co-Founder — Nilora Organics' },
+    ],
+  };
+
+  function initGallery() {
+    var lightbox = document.getElementById('lightbox');
+    if (!lightbox) return;
+
+    var imgEl = document.getElementById('lightboxImage');
+    var capEl = document.getElementById('lightboxCaption');
+    var counterEl = document.getElementById('lightboxCounter');
+    var prevBtn = document.getElementById('lightboxPrev');
+    var nextBtn = document.getElementById('lightboxNext');
+    var closeBtn = document.getElementById('lightboxClose');
+    if (!imgEl || !prevBtn || !nextBtn || !closeBtn) return;
+
+    var current = null;
+    var index = 0;
+    var lastFocused = null;
+    var startX = 0;
+
+    function render() {
+      var item = current[index];
+      imgEl.src = item.src;
+      imgEl.alt = item.caption || '';
+      if (capEl) capEl.textContent = item.caption || '';
+      var multi = current.length > 1;
+      if (counterEl) {
+        counterEl.textContent = index + 1 + ' / ' + current.length;
+        counterEl.style.display = multi ? '' : 'none';
+      }
+      prevBtn.style.display = multi ? '' : 'none';
+      nextBtn.style.display = multi ? '' : 'none';
+    }
+
+    function openGallery(key) {
+      var images = GALLERIES[key];
+      if (!images || !images.length) return;
+      current = images;
+      index = 0;
+      lastFocused = document.activeElement;
+      lightbox.removeAttribute('hidden');
+      document.body.classList.add('lightbox-open');
+      render();
+      closeBtn.focus();
+    }
+
+    function closeGallery() {
+      lightbox.setAttribute('hidden', '');
+      document.body.classList.remove('lightbox-open');
+      imgEl.src = '';
+      current = null;
+      if (lastFocused && lastFocused.focus) lastFocused.focus();
+    }
+
+    function next() {
+      if (!current) return;
+      index = (index + 1) % current.length;
+      render();
+    }
+
+    function prev() {
+      if (!current) return;
+      index = (index - 1 + current.length) % current.length;
+      render();
+    }
+
+    var triggers = document.querySelectorAll('[data-gallery]');
+    for (var i = 0; i < triggers.length; i++) {
+      triggers[i].addEventListener('click', function (e) {
+        e.preventDefault();
+        openGallery(this.getAttribute('data-gallery'));
+      });
+    }
+
+    closeBtn.addEventListener('click', closeGallery);
+    nextBtn.addEventListener('click', next);
+    prevBtn.addEventListener('click', prev);
+
+    lightbox.addEventListener('click', function (e) {
+      if (e.target && e.target.getAttribute && e.target.getAttribute('data-close') === 'true') {
+        closeGallery();
+      }
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (lightbox.hasAttribute('hidden')) return;
+      if (e.key === 'Escape' || e.keyCode === 27) closeGallery();
+      else if (e.key === 'ArrowRight' || e.keyCode === 39) next();
+      else if (e.key === 'ArrowLeft' || e.keyCode === 37) prev();
+    });
+
+    lightbox.addEventListener(
+      'touchstart',
+      function (e) {
+        if (e.changedTouches && e.changedTouches.length) startX = e.changedTouches[0].clientX;
+      },
+      { passive: true }
+    );
+    lightbox.addEventListener(
+      'touchend',
+      function (e) {
+        if (!current || current.length < 2) return;
+        if (!e.changedTouches || !e.changedTouches.length) return;
+        var dx = e.changedTouches[0].clientX - startX;
+        if (Math.abs(dx) > 40) {
+          if (dx < 0) next();
+          else prev();
+        }
+      },
+      { passive: true }
+    );
+  }
+
+  // =========================================================================
   // INIT
   // =========================================================================
   function init() {
@@ -468,6 +620,7 @@
       try {
         initNavigation();
         initSmoothAnchors(null);
+        initGallery();
       } catch (e) {
         /* interaction failure is non-fatal */
       }
@@ -480,6 +633,7 @@
       lenis = initLenis();
       initNavigation();
       initSmoothAnchors(lenis);
+      initGallery();
 
       // Run GSAP after first paint so layout is measured correctly.
       requestAnimationFrame(function () {

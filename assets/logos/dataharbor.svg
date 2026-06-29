@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="DataHarbor club logo">
+  <rect width="100" height="100" rx="22" fill="#5d576b"/>
+  <g fill="#f4f1bb">
+    <rect x="24" y="58" width="12" height="20" rx="3"/>
+    <rect x="44" y="44" width="12" height="34" rx="3"/>
+    <rect x="64" y="30" width="12" height="48" rx="3"/>
+  </g>
+</svg>

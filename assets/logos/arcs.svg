@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="ARCS at CSUN research logo">
+  <rect width="100" height="100" rx="22" fill="#9bc1bc"/>
+  <g fill="none" stroke="#141414" stroke-width="3.5" stroke-linecap="round">
+    <ellipse cx="50" cy="50" rx="30" ry="13" transform="rotate(-30 50 50)"/>
+    <ellipse cx="50" cy="50" rx="30" ry="13" transform="rotate(30 50 50)"/>
+  </g>
+  <circle cx="50" cy="50" r="7" fill="#141414"/>
+</svg>
