@@ -460,6 +460,7 @@
   // =========================================================================
   var GALLERIES = {
     'ai-supply-chain': [
+      { src: 'assets/projects/ai-supply-chain/00-summary.webp', caption: 'AI-Powered Supply Chain Intelligence — dashboard overview' },
       { src: 'assets/projects/ai-supply-chain/01-overview.webp', caption: 'Supply chain overview — KPI cards, profit by region and shipping mode' },
       { src: 'assets/projects/ai-supply-chain/02-regional.webp', caption: 'Regional delivery and risk intelligence' },
       { src: 'assets/projects/ai-supply-chain/03-profitability.webp', caption: 'Profitability intelligence' },
@@ -467,6 +468,7 @@
       { src: 'assets/projects/ai-supply-chain/05-ai-insights.webp', caption: 'GenAI-generated executive insights' },
     ],
     'healthcare-pricing': [
+      { src: 'assets/projects/healthcare-pricing/00-summary.webp', caption: 'Kansas Healthcare Price Transparency — dashboard overview' },
       { src: 'assets/projects/healthcare-pricing/01-median-price.webp', caption: 'Median negotiated price by insurer' },
       { src: 'assets/projects/healthcare-pricing/02-cpt-mean.webp', caption: 'Mean price by CPT procedure' },
       { src: 'assets/projects/healthcare-pricing/03-payer-gross.webp', caption: 'Mean gross charge by CPT and payer' },
@@ -474,17 +476,22 @@
       { src: 'assets/projects/healthcare-pricing/05-mean-vs-median.webp', caption: 'Mean vs. median gross charge' },
     ],
     'ecommerce-forecast': [
+      { src: 'assets/projects/ecommerce-forecast/00-summary.webp', caption: 'Brazil E-Commerce Analytics — dashboard overview' },
       { src: 'assets/projects/ecommerce-forecast/01-executive.webp', caption: 'Executive revenue overview' },
       { src: 'assets/projects/ecommerce-forecast/02-forecast.webp', caption: 'Revenue forecast projection' },
       { src: 'assets/projects/ecommerce-forecast/03-seasonality.webp', caption: 'Seasonality and demand patterns' },
       { src: 'assets/projects/ecommerce-forecast/04-seller.webp', caption: 'Seller performance analysis' },
     ],
     'creator-economy': [
+      { src: 'assets/projects/creator-economy/00-summary.webp', caption: 'Algo Amplification — marketing analytics overview' },
       { src: 'assets/projects/creator-economy/01-chart.webp', caption: 'Algorithmic amplification analysis' },
       { src: 'assets/projects/creator-economy/02-chart.webp', caption: 'Engagement efficiency analysis' },
       { src: 'assets/projects/creator-economy/03-chart.webp', caption: 'Creator authority vs. visibility' },
       { src: 'assets/projects/creator-economy/04-chart.webp', caption: 'Regression model output' },
       { src: 'assets/projects/creator-economy/05-chart.webp', caption: 'Scale-efficiency tradeoff' },
+    ],
+    'supply-chain': [
+      { src: 'assets/projects/supply-chain/00-summary.webp', caption: 'AtliQ Mart Supply Chain Analysis — dashboard overview' },
     ],
     'indo-swiss': [
       { src: 'assets/exp/indo-swiss-convention.webp', caption: '10th Annual Convention — Indo Swiss Remedies' },

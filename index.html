@@ -830,7 +830,12 @@
           </div>
 
           <div class="project-item">
-            <div class="project-visual">
+            <button
+              type="button"
+              class="project-visual has-gallery"
+              data-gallery="supply-chain"
+              aria-label="View Supply Chain Analytics (AtliQ Mart) dashboard"
+            >
               <div class="project-visual-inner" aria-hidden="true">
                 Supply Chain Analytics — FMCG (AtliQ Mart)
               </div>
@@ -840,7 +845,8 @@
                 alt=""
                 loading="lazy"
               />
-            </div>
+              <span class="project-visual-hint" aria-hidden="true">&#128065; Click to view dashboard</span>
+            </button>
             <div class="project-info">
               <div class="project-category">Supply Chain BI</div>
               <h3 class="project-name">Supply Chain Analytics — FMCG (AtliQ Mart)</h3>
@@ -854,6 +860,9 @@
                 <span>DAX</span>
               </div>
               <div class="project-links">
+                <button type="button" class="project-gallery-link" data-gallery="supply-chain">
+                  View dashboard &rarr;
+                </button>
                 <a
                   href="https://github.com/Abhiiiii7/supply-chain-analysis-in-the-fmcg-domain-atliqmart"
                   target="_blank"
