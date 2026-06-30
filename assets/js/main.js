@@ -492,6 +492,9 @@
     ],
     'supply-chain': [
       { src: 'assets/projects/supply-chain/00-summary.webp', caption: 'AtliQ Mart Supply Chain Analysis — dashboard overview' },
+      { src: 'assets/projects/supply-chain/01-service-levels.webp', caption: 'Service levels — OT%, IF%, OTIF% by city vs targets' },
+      { src: 'assets/projects/supply-chain/02-customer-product.webp', caption: 'Orders by delivery status, customer & product insights' },
+      { src: 'assets/projects/supply-chain/03-trend.webp', caption: 'OT% vs target — trend analysis' },
     ],
     'indo-swiss': [
       { src: 'assets/exp/indo-swiss-convention.webp', caption: '10th Annual Convention — Indo Swiss Remedies' },
