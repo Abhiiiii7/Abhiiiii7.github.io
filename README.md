@@ -1,6 +1,6 @@
 # Abhinav Varma Konderu — Portfolio
 
-Personal portfolio site for **Abhinav Varma Konderu**, a Data Analyst and M.S. Business Analytics student at California State University, Northridge (CSUN). It showcases experience, skills, selected analytics projects, education, and contact details.
+Personal portfolio site for **Abhinav Varma Konderu**, a Data Analyst and M.S. Business Analytics student at California State University, Northridge (CSUN). It showcases skills, selected analytics projects, education, and contact details.
 
 **Live:** https://abhinavvarma.com/
 

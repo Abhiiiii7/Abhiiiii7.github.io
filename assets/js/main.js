@@ -55,7 +55,6 @@
     '.about-bio p',
     '.about-philosophy',
     '.highlight-item',
-    '.experience-item',
     '.skills-header h2',
     '.skill-category',
     '.projects-heading',
@@ -284,13 +283,6 @@
     reveal('.about-philosophy', { y: 20, opacity: 0, duration: 0.6, ease: 'power3.out' }, { trigger: '.about-philosophy', start: 'top 90%' });
     reveal('.highlight-item', { y: 40, opacity: 0, duration: 0.7, stagger: 0.12, ease: 'power3.out' }, { trigger: '.about-highlights', start: 'top 80%' });
 
-    // --- Experience ---
-    reveal('.experience .section-label', { y: 30, opacity: 0, duration: 0.6, ease: 'power3.out' }, { trigger: '.experience', start: 'top 80%' });
-    var expItems = document.querySelectorAll('.experience-item');
-    expItems.forEach(function (item, index) {
-      reveal(item, { y: 50, opacity: 0, duration: 0.7, delay: index * 0.05, ease: 'power3.out' }, { trigger: item, start: 'top 85%' });
-    });
-
     // --- Skills ---
     reveal('.skills .section-label', { y: 30, opacity: 0, duration: 0.6, ease: 'power3.out' }, { trigger: '.skills', start: 'top 80%' });
     reveal('.skills-header h2', { y: 50, opacity: 0, duration: 0.8, ease: 'power3.out' }, { trigger: '.skills', start: 'top 75%' });
@@ -495,15 +487,6 @@
       { src: 'assets/projects/supply-chain/01-service-levels.webp', caption: 'Service levels — OT%, IF%, OTIF% by city vs targets' },
       { src: 'assets/projects/supply-chain/02-customer-product.webp', caption: 'Orders by delivery status, customer & product insights' },
       { src: 'assets/projects/supply-chain/03-trend.webp', caption: 'OT% vs target — trend analysis' },
-    ],
-    'indo-swiss': [
-      { src: 'assets/exp/indo-swiss-convention.webp', caption: '10th Annual Convention — Indo Swiss Remedies' },
-    ],
-    dataharbor: [
-      { src: 'assets/exp/dataharbor-bootcamp.webp', caption: 'DataHarbor bootcamp for CS students — Anurag University' },
-    ],
-    nilora: [
-      { src: 'assets/exp/nilora-cofounder.webp', caption: 'Co-Founder — Nilora Organics' },
     ],
   };
 
